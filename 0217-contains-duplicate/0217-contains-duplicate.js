@@ -3,16 +3,13 @@
  * @return {boolean}
  */
 var containsDuplicate = function (nums) {
-  let ans = false;
-  let save = [];
+  let seen = new Set();
 
   for (const num of nums) {
-    if (save[num] == undefined) {
-      save[num] = num;
-    } else {
+    if (seen.has(num)) {
       return true;
-    }
+    } else seen.add(num);
   }
-
-  return ans;
+    
+  return false
 };
