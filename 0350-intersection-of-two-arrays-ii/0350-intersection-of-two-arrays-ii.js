@@ -14,8 +14,6 @@ var intersect = function (nums1, nums2) {
     map.set(num, (map.get(num) || 0) + 1);
   }
 
-  console.log(map, "map");
-
   for (let i = 0; i < shorter.length; i++) {
     if (map.has(shorter[i]) && map.get(shorter[i]) >= 1) {
       ans.push(shorter[i]);
