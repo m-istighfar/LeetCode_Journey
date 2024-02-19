@@ -5,8 +5,6 @@ var join = function (arr1, arr2) {
     idMap.set(obj.id, obj);
   });
 
-  console.log(idMap);
-
   arr2.forEach((obj) => {
     if (idMap.has(obj.id)) {
       idMap.set(obj.id, { ...idMap.get(obj.id), ...obj });
