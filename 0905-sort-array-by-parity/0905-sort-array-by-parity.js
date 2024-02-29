@@ -1,29 +1,14 @@
-/**
- * @param {number[]} nums
- * @return {number[]}
- */
-var sortArrayByParity = function (nums) {
-  let left = 0;
-  let right = nums.length - 1;
-  let temp;
+function sortArrayByParity(nums) {
+  const even = [];
+  const odd = [];
 
-
-  while (left < right) {
-    if ((nums[left] % 2 !== 0) & (nums[right] % 2 == 0)) {
-      temp = nums[left];
-      nums[left] = nums[right];
-      nums[right] = temp;
-      left++;
-      right--;
-    } else if ((nums[left] % 2 !== 0) & (nums[right] % 2 !== 0)) {
-      right--;
-    } else if ((nums[left] % 2 == 0) & (nums[right] % 2 == 0)) {
-      left++;
-    } else if ((nums[left] % 2 == 0) & (nums[right] % 2 !== 0)) {
-      left++;
-      right--;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] % 2 === 0) {
+      even.push(nums[i]);
+    } else {
+      odd.push(nums[i]);
     }
   }
 
-  return nums;
-};
+  return even.concat(odd);
+}
