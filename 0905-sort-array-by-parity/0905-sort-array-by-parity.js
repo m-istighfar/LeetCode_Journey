@@ -7,8 +7,6 @@ var sortArrayByParity = function (nums) {
   let right = nums.length - 1;
   let temp;
 
-  nums.sort((a, b) => a - b);
-
 
   while (left < right) {
     if ((nums[left] % 2 !== 0) & (nums[right] % 2 == 0)) {
