@@ -4,17 +4,11 @@
  */
 var missingNumber = function(nums) {
     
-    let map = new Map()
-
-    for (const num of nums) {
-        map.set(num, true)
-    }
-
-
+    let set = new Set(nums)
 
     for (let i = 0; i <= nums.length; i++) {
 
-        if (!map.has(i)) return i
+        if (!set.has(i)) return i
     }
 
 
