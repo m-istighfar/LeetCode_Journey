@@ -4,17 +4,18 @@
  * @return {boolean}
  */
 var canConstruct = function (ransomNote, magazine) {
-  let maga = {};
-  let ans = true;
+  let map = new Map();
 
-  for (let i = 0; i < magazine.length; i++) {
-    maga[magazine[i]] = maga[magazine[i]] + 1 || 1;
+  for (const str of magazine) {
+    map.set(str, (map.get(str) || 0) + 1);
   }
 
-  for (let i = 0; i < ransomNote.length; i++) {
-    if (maga[ransomNote[i]] > 0) {
-      maga[ransomNote[i]]--;
-    } else return false;
+  for (const str of ransomNote) {
+    if (!map.has(str) || map.get(str) == 0) {
+      return false;
+    } else {
+      map.set(str, map.get(str) - 1);
+    }
   }
 
   return true;
