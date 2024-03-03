@@ -3,7 +3,7 @@ var compress = function (chars) {
   let left = 0;
 
   for (let right = 1; right <= chars.length; right++) {
-    if (right < chars.length && chars[right] == chars[right-1]) {
+    if ( chars[right] == chars[right-1]) {
       curr++;
     } else {
       chars[left] = chars[right - 1];
