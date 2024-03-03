@@ -6,8 +6,6 @@
 var numRescueBoats = function (people, limit) {
   people.sort((a, b) => a - b);
 
-  console.log(people);
-
   let left = 0;
   let right = people.length - 1;
   let ans = 0;
