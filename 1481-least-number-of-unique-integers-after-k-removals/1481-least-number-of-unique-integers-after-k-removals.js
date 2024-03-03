@@ -6,8 +6,6 @@
 var findLeastNumOfUniqueInts = function(arr, k) {
 
     let map = new Map()
-    let ans = 0
-    let check = 0
 
     for (let nums of arr) {
         map.set(nums, (map.get(nums) || 0) + 1)
