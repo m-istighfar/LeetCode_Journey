@@ -4,20 +4,13 @@
  * @return {number}
  */
 var getCommon = function(nums1, nums2) {
+    const set1 = new Set(nums1);
 
-    let max = 0;
-    let min = 0;
-    
-    nums1.length >= nums2.length? max = nums1 : max = nums2;
-    nums1.length < nums2.length? min = nums1 : min = nums2;
-
-    let set = new Set(max)
-
-    for (let i = 0; i < min.length;i++) {
-      if (set.has(min[i])) {
-          return min[i]
-      }
+    for (const num of nums2) {
+        if (set1.has(num)) {
+            return num;
+        }
     }
-    
-    return -1
+
+    return -1;
 };
