@@ -16,9 +16,6 @@ for (let i = 1; i <= n/2; i++) {
      factor.push(n)
     
     
-    
-console.log(factor)
-    
 return factor.length >= k ? factor[k-1] : -1
     
 };
