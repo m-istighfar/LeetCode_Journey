@@ -3,17 +3,19 @@
  * @return {number}
  */
 var removeDuplicates = function (nums) {
-  let k = 0;
-  let map = {};
+    
+    let count = 0
+    let map = new Map()
 
-  for (let i = 0; i < nums.length; i++) {
-    if (map[nums[i]] === undefined) {
-     
-      map[nums[i]] = true;
-      nums[k] = nums[i];
-       k++;
-    }
-  }
 
-  return k;
+   for (let i = 0; i < nums.length; i++) {
+       if (!map.has(nums[i])) {
+           map.set(nums[i], true)
+           nums[count] = nums[i]
+           count++
+       }
+   }
+    
+    return count
+ 
 };;
