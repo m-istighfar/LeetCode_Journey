@@ -5,24 +5,22 @@
 var longestPalindrome = function (s) {
   let map = new Map();
 
-  for (const char of s) {
+  for (let char of s) {
     map.set(char, (map.get(char) || 0) + 1);
   }
 
-  let ans = 0;
-  let ganjil = false
-  
+  let count = 0;
+  let odd = false;
+  let maxOdd = 0;
 
-  for (const [key] of map) {
-    if (map.get(key) % 2 == 0) {
-      ans = ans + map.get(key);
+  for (let value of map.values()) {
+    if (value % 2 == 0) {
+      count += value;
     } else {
-      if (map.get(key) % 2 == 1) {
-          ans = ans + map.get(key) - 1
-          ganjil = true
-      }
+      odd = true;
+      count += value - 1;
     }
   }
 
-  return ganjil ? ans + 1 : ans
+  return odd ? count + 1 : count;
 };
