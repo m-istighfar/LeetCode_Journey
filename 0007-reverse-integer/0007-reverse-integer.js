@@ -22,7 +22,7 @@ var reverse = function(x) {
      ans += digit
  }
 
- if (ans > (Math.pow(2, 31) - 1)) {
+ if (ans > (Math.pow(2, 31))) {
             return 0;
         }
     
