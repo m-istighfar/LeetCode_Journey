@@ -3,16 +3,14 @@
  * @return {string}
  */
 var sortSentence = function(s) {
-    
-    let arr = s.split(" ")
-    let ans = []
-    
-    
-    for (let i = 0; i < arr.length; i++) {
-        let word = arr[i];
-        ans[word[word.length-1]-1] = word.split("").splice(0, word.length-1).join("") 
+    const words = s.split(" ");
+    const sortedWords = [];
+
+    for (const word of words) {
+        const index = parseInt(word[word.length - 1]) - 1;
+        const sortedWord = word.slice(0, -1);
+        sortedWords[index] = sortedWord;
     }
-    
-    return ans.join(" ")
-    
+
+    return sortedWords.join(" ");
 };
