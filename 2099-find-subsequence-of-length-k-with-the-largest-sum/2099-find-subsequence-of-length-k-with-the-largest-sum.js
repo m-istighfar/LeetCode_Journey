@@ -18,9 +18,5 @@ var maxSubsequence = function(nums, k) {
     
     before.sort((a,b) => a[0] - b[0])
     
-    for (let [index,num] of before) {
-        ans.push(num)
-    }
-    
-    return ans
+    return before.map(elem => elem[1])
 };
