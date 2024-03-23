@@ -2,12 +2,11 @@
  * @param {number} num
  * @return {number}
  */
-var minimumSum = function(num) {
-    
-    let arr = Array.from(String(num), Number).sort((a,b) => a-b)
-    
-    let arr1 = Number([arr[0],arr[2]].join(""))
-    let arr2 = Number([arr[1],arr[3]].join(""))
-    
-    return arr1+arr2
+var minimumSum = function (num) {
+  let digits = Array.from(String(num), Number).sort((a, b) => a - b);
+
+  let num1 = digits[0] * 10 + digits[2];
+  let num2 = digits[1] * 10 + digits[3];
+
+  return num1 + num2;
 };
