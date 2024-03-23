@@ -2,21 +2,20 @@
  * @param {number[]} nums
  * @return {boolean}
  */
-var isGood = function(nums) {
+var isGood = function (nums) {
+  let maxNum = Math.max(...nums);
 
-    let max = Math.max(...nums)
+  if (nums.length !== maxNum + 1) return false;
 
-    if (nums.length !== max+1) return false 
-    
-    nums.sort((a,b) => a-b)
+  let frequency = {};
+  for (let num of nums) {
+    frequency[num] = (frequency[num] || 0) + 1;
+  }
 
-    for (i = 0; i < nums.length-1; i++) {
-        if (nums[i+1] - nums[i] !== 1 && i !== nums.length-2 ) {
-            return false
-        }
-    }
+  for (let i = 1; i <= maxNum; i++) {
+    if (i === maxNum && frequency[i] !== 2) return false;
+    if (i < maxNum && frequency[i] !== 1) return false;
+  }
 
-    return nums[nums.length-1] = nums[nums.length-2]
-
-
+  return true;
 };
