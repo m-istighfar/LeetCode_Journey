@@ -12,7 +12,6 @@ var largestNumber = function (nums) {
     return order2 - order1;
   });
     
- console.log(numStrs)
 
   if (numStrs[0] === "0") {
     return "0";
